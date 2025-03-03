@@ -3,6 +3,7 @@ import FiltroCards from '../../components/FiltroCard'
 import { Busca, Container, FiltroContainer } from './styles'
 import { RootReducer } from '../../store'
 import { alterarTermo } from '../../store/reducers/filtros'
+import * as enums from '../../utils/enums/Tarefa'
 
 const BarraLateral = () => {
   const dispatch = useDispatch()
@@ -17,12 +18,32 @@ const BarraLateral = () => {
         onChange={(evento) => dispatch(alterarTermo(evento.target.value))}
       />
       <FiltroContainer>
-        <FiltroCards contador={3} legenda={'pendentes'} />
-        <FiltroCards contador={4} legenda={'concluídas'} />
-        <FiltroCards contador={2} legenda={'urgentes'} />
-        <FiltroCards contador={2} legenda={'importantes'} />
-        <FiltroCards contador={3} legenda={'normal'} />
-        <FiltroCards contador={7} legenda={'todas'} ativo />
+        <FiltroCards
+          valor={enums.Status.PENDENTE}
+          criterio="status"
+          legenda={'pendentes'}
+        />
+        <FiltroCards
+          valor={enums.Status.CONCLUIDA}
+          criterio="status"
+          legenda={'concluídas'}
+        />
+        <FiltroCards
+          valor={enums.Prioridade.URGENTE}
+          criterio="prioridade"
+          legenda={'urgentes'}
+        />
+        <FiltroCards
+          valor={enums.Prioridade.IMPORTANTE}
+          criterio="prioridade"
+          legenda={'importantes'}
+        />
+        <FiltroCards
+          valor={enums.Prioridade.IMPORTANTE}
+          criterio="prioridade"
+          legenda={'normal'}
+        />
+        <FiltroCards criterio="todas" legenda={'todas'} />
       </FiltroContainer>
     </Container>
   )

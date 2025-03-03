@@ -1,17 +1,18 @@
 import styled from 'styled-components'
 import { cores } from '../../styles'
 
-import { Props } from '.'
+type Props = {
+  ativo?: boolean
+}
 
-type PropsSemLegendaEContador = Omit<Props, 'contador' | 'legenda'>
-
-export const Card = styled.div<PropsSemLegendaEContador>`
+export const Card = styled.div<Props>`
   padding: 8px;
   background-color: ${cores.branco};
   color: ${(props) => (props.ativo ? cores.azul : cores.cinza)};
   border: solid 1px ${(props) => (props.ativo ? cores.azul : cores.cinza)};
   border-radius: 8px;
   display: block;
+  cursor: pointer;
 `
 
 export const Contador = styled.div`
