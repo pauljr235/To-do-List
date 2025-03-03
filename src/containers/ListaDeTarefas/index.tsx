@@ -42,7 +42,7 @@ const ListaDeTarefas = () => {
         <li>{criterio}</li>
         <li>{valor}</li>
       </ul>
-      <ul>
+      <ul style={{ listStyle: 'none' }}>
         {filtraTarefas().map((item) => (
           <>
             <li key={item.title}>

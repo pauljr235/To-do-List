@@ -28,6 +28,7 @@ export const Card = styled.div`
   border: 1px solid ${cores.grey};
   box-shadow: 0 2px 4px rgba(0, 0, 0.25);
   margin-bottom: 24px;
+
   li {
     list-style: none;
   }
