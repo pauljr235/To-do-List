@@ -32,12 +32,18 @@ export const Card = styled.div`
   li {
     list-style: none;
   }
+
+  label {
+    display: flex;
+    align-items: center;
+    padding-bottom: 14px;
+  }
 `
 
 export const Titulo = styled.h3`
   font-size: 20px;
   font-weight: 700;
-  padding-bottom: 14px;
+  margin-left: 8px;
 `
 
 export const Tag = styled.span<TagProps>`

@@ -17,10 +17,3 @@ export const FiltroContainer = styled.div`
   grid-gap: 16px;
   margin-top: 16px;
 `
-export const Busca = styled.input`
-  padding: 8px;
-  font-size: 14px;
-  font-weight: bold;
-  color: ${cores.cinza};
-  border: 1px solid ${cores.cinza};
-`

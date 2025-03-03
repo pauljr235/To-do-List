@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import * as enums from '../../utils/enums/Tarefa'
-import { remover, editar } from '../../store/reducers/tarefas'
+import { remover, editar, alteraStatus } from '../../store/reducers/tarefas'
 
 import {
   BarraDeAcoes,
@@ -15,7 +15,7 @@ import {
   Titulo
 } from './styles'
 
-type PropsTarefas = {
+export type PropsTarefas = {
   title: string
   priority: enums.Prioridade
   status: enums.Status
@@ -49,9 +49,30 @@ const Tarefas = ({
     dispatch(remover(id))
   }
 
+  function alteraStatusTarefa(evento: ChangeEvent<HTMLInputElement>) {
+    dispatch(
+      alteraStatus({
+        id,
+        finalizado: evento.target.checked
+      })
+    )
+  }
+
   return (
     <Card>
-      <Titulo>{title}</Titulo>
+      <label htmlFor={title}>
+        <input
+          checked={status === enums.Status.CONCLUIDA}
+          type="checkbox"
+          id={title}
+          onChange={alteraStatusTarefa}
+        />
+        <Titulo>
+          {estaEditando ? <em>Editando...</em> : ''}
+          {title}
+        </Titulo>
+      </label>
+
       <Tag paramentro="prioridade" priority={priority}>
         {priority}
       </Tag>

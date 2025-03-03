@@ -1,5 +1,5 @@
 import Tarefas from '../../components/Tarefas'
-import { Container } from './styles'
+import { Container, MainContainer, Titulo } from '../../styles'
 
 import { useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
@@ -33,10 +33,10 @@ const ListaDeTarefas = () => {
     }
   }
   return (
-    <Container>
-      <h4 style={{ padding: '40px' }}>
+    <MainContainer>
+      <Titulo as="p" style={{ padding: '40px' }}>
         2 tarefas marcadas como &quot;todas&ldquo; e &quot;{termo}&ldquo;
-      </h4>
+      </Titulo>
       <ul style={{ listStyle: 'none' }}>
         <li>{termo}</li>
         <li>{criterio}</li>
@@ -57,7 +57,7 @@ const ListaDeTarefas = () => {
           </>
         ))}
       </ul>
-    </Container>
+    </MainContainer>
   )
 }
 
