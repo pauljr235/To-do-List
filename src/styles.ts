@@ -10,7 +10,8 @@ export const cores = {
   grafite: '#2F3640',
   laranja: '#E1A32A',
   amarelo: '#F0C11A',
-  cinzaClaro: '#FCFCFC'
+  cinzaClaro: '#FCFCFC',
+  verde: '#44BD32'
 }
 
 export const GlobalCss = createGlobalStyle`
