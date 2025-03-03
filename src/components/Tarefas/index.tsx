@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import * as enums from '../../utils/enums/Tarefa'
-import { remover } from '../../store/reducers/tarefas'
+import { remover, editar } from '../../store/reducers/tarefas'
 
 import {
   BarraDeAcoes,
@@ -40,6 +40,15 @@ const Tarefas = ({
     }
   }, [originalDescription])
 
+  function cancelarEdicao() {
+    setEstaEditando(false)
+    setDescription(originalDescription)
+  }
+
+  function removerItem() {
+    dispatch(remover(id))
+  }
+
   return (
     <Card>
       <Titulo>{title}</Titulo>
@@ -57,14 +66,24 @@ const Tarefas = ({
       <BarraDeAcoes>
         {estaEditando ? (
           <>
-            <ButtonSalvar type="button">Salvar</ButtonSalvar>
-            <ButtonCancelarERemover
+            <ButtonSalvar
               onClick={() => {
+                dispatch(
+                  editar({
+                    description,
+                    priority,
+                    status,
+                    title,
+                    id
+                  })
+                )
                 setEstaEditando(false)
-                setDescription(originalDescription)
               }}
               type="button"
             >
+              Salvar
+            </ButtonSalvar>
+            <ButtonCancelarERemover onClick={cancelarEdicao} type="button">
               Cancelar
             </ButtonCancelarERemover>
           </>
@@ -73,10 +92,7 @@ const Tarefas = ({
             <Button onClick={() => setEstaEditando(true)} type="button">
               Editar
             </Button>
-            <ButtonCancelarERemover
-              onClick={() => dispatch(remover(id))}
-              type="button"
-            >
+            <ButtonCancelarERemover onClick={removerItem} type="button">
               Remover
             </ButtonCancelarERemover>
           </>
