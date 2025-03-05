@@ -3,6 +3,9 @@
 ## Descrição
 Este é um projeto de To-Do List desenvolvido com **React** e **TypeScript**, utilizando **styled-components** para estilização, **Redux** para gerenciamento de estado e **React Router DOM** para navegação entre rotas.
 
+## Demonstração
+Veja o projeto em funcionamento: https://to-do-list-eight-olive-95.vercel.app/
+
 ## Tecnologias Utilizadas
 - **React** com **TypeScript**
 - **Styled-components**
@@ -35,6 +38,25 @@ O desenvolvimento seguiu a seguinte ordem:
 9. Configuração do React Router DOM para roteamento
 10. Implementação da funcionalidade de criação de tarefas
 11. Marcar tarefas como concluídas
+
+## Diferenciais Técnicos
+- Arquitetura organizada com Redux para melhor gerenciamento de estado
+- Componentes reutilizáveis e bem estruturados
+- Uso de Styled-components para melhor modularização de estilos
+- Navegação fluida entre páginas com React Router DOM
+- Boas práticas de performance e otimização do React
+
+## Desafios e Soluções
+Durante o desenvolvimento, alguns desafios foram encontrados:
+- **Gerenciamento de Estado**: Inicialmente, utilizar apenas `useState` para controlar as tarefas tornou-se complexo. A solução foi implementar o Redux para centralizar e organizar melhor o estado.
+- **Filtragem Dinâmica**: O desafio era manter a filtragem eficiente e reativa ao estado global. A solução foi usar **selectors do Redux** para otimizar os filtros.
+- **Estilização Modular**: Para evitar estilos globais conflitantes, foi adotado **Styled-components**, permitindo estilização encapsulada em cada componente.
+
+## Próximos Passos
+- Implementar **autenticação de usuários**
+- Criar **tema dark/light**
+- Melhorar **testes automatizados**
+- Adicionar **animações para melhor experiência do usuário**
 
 ## Como Executar o Projeto
 1. Clone o repositório:
