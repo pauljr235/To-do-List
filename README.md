@@ -79,6 +79,3 @@ During development, some challenges were encountered:
 ## Contribution
 If you want to contribute, feel free to open issues and pull requests!
 
-## License
-This project is under the MIT license. See the `LICENSE` file for more details.
-
